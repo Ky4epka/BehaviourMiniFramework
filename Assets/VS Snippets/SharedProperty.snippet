@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SharedProperty</Title>
+      <Author>
+		Ky4ePoK
+      </Author>
+      <Description>
+		Declares two classes (event n property) for shared property
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>sharedProp</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+	    <Literal Editable="true">
+          <ID>propSubNamespace</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>SubNamespace</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propName</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>Name</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propType</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>int</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propGroup</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>Group</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[
+namespace Main.Aggregator.Events.$propSubNamespace$
+{
+	public class $propName$$selected$Property: SharedPropertyEvent<$propType$>
+	{
+	}
+}
+namespace Main.Aggregator.Properties.$propSubNamespace$
+{
+	public class $propName$Property: SharedProperty<$propType$, Main.Aggregator.Events.$propSubNamespace$.$propName$Property>
+	{
+        public override string GroupTag => "$propGroup$";
+        public override string SharedName => "$propName$";
+	}
+}]]></Code>
+          <Imports>
+            <Import>
+              <Namespace>Main</Namespace>
+            </Import>
+            <Import>
+              <Namespace>Main.Objects</Namespace>
+            </Import>
+            <Import>
+              <Namespace>Main.Objects.Behaviours</Namespace>
+            </Import>
+            <Import>
+              <Namespace>Main.Objects.Behaviours.Attributes</Namespace>
+            </Import>
+          </Imports>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

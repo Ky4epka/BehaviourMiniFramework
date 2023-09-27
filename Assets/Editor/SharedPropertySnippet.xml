@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Shared property class</Title>    
+            <Author>Ky4ePoK</Author>
+            <Description>Snippet for shared property class</Description>
+            <Shortcut>sharedprop</Shortcut> 
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[public class $propName$Property: SharedProperty<$propType$Property, $propName$Property>{}]]>
+            </Code>
+          <Imports>
+            <Import>
+              <Namespace>Main</Namespace>
+            </Import>
+            <Import>
+              <Namespace>Main.Objects</Namespace>
+            </Import>
+            <Import>
+              <Namespace>Main.Objects.Behaviours</Namespace>
+            </Import>
+            <Import>
+              <Namespace>Main.Objects.Behaviours.Attributes</Namespace>
+            </Import>
+          </Imports>
+          <Declaration>
+            <Literal>
+              <ID>propName</ID>
+              <Tooltip>Property name</Tooltip>
+            </Literal>
+          </Declaration>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
